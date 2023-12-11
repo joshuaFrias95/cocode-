@@ -1,6 +1,6 @@
-CREATE TABLE tecnologias (
-    tecnologia_id INT NOT NULL AUTO_INCREMENT,
-    nombre_tecnologia VARCHAR(15) NOT NULL UNIQUE,
+CREATE TABLE dificultades (
+    dificultad_id INT NOT NULL AUTO_INCREMENT,
+    nombre_dificultad VARCHAR(15) NOT NULL UNIQUE,
 
-    PRIMARY KEY(tecnologia_id)
+    PRIMARY KEY(dificultad_id)
 ) ENGINE=InnoDB;
