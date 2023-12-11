@@ -1,5 +1,6 @@
 CREATE TABLE tecnologias (
-    id bigint not null auto_increment,
-    nombre_tecnologia varchar(15) not null unique,
-    primary key(id)
-);
+    tecnologia_id INT NOT NULL AUTO_INCREMENT,
+    nombre_tecnologia VARCHAR(15) NOT NULL UNIQUE,
+
+    PRIMARY KEY(tecnologia_id)
+) ENGINE=InnoDB;

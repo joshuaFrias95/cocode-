@@ -1,5 +1,6 @@
 CREATE TABLE rol_proyecto (
-    id bigint not null auto_increment,
-    nombre_rol_proyecto varchar(15) not null unique,
-    primary key(id)
-);
+    proyecto_id INT NOT NULL AUTO_INCREMENT,
+    nombre_rol_proyecto VARCHAR(15) NOT NULL UNIQUE,
+
+    PRIMARY KEY(proyecto_id)
+) ENGINE=InnoDB;
