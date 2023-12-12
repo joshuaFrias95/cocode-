@@ -8,6 +8,5 @@ spring:
     url: ${DB_URL}/${DB}
     username: ${DB_DEV_USER}
     password: ${DB_DEV_KEY}
-  jpa:
-    show-sql: true
+
 

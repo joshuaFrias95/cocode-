@@ -3,7 +3,11 @@ package com.cocode.service;
 
 import com.cocode.model.entity.Pais;
 
-public interface ICatalogue {
+import java.util.List;
 
+public interface IPais {
+
+    List<Pais> listAll();
     Pais findById(Long id);
+    boolean existByID(Long id);
 }
