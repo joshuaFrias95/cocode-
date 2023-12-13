@@ -1,14 +1,12 @@
 package com.cocode.model.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
 
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
@@ -21,7 +19,7 @@ public class Pais implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "codigo_pais")
-    private String codigo_pais;
+    private String codigoPais;
     @Column(name = "nombre_pais")
     private String nombre;
 }

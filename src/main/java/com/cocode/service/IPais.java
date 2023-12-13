@@ -8,6 +8,6 @@ import java.util.List;
 public interface IPais {
 
     List<Pais> listAll();
+
     Pais findById(Long id);
-    boolean existByID(Long id);
 }

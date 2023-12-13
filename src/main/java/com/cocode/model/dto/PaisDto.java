@@ -12,7 +12,7 @@ import java.io.Serializable;
 public class PaisDto implements Serializable {
 
     private Long id;
-    private String codigo_pais;
+    private String codigoPais;
     private String nombre;
 
 }

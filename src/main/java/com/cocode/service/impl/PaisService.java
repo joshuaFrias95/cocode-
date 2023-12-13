@@ -10,11 +10,12 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class PaisImpl implements IPais {
+public class PaisService implements IPais {
 
     @Autowired
     private PaisDao paisDao;
 
+    @Transactional(readOnly = true)
     @Override
     public List<Pais> listAll() {
         return (List<Pais>) paisDao.findAll();
@@ -26,8 +27,4 @@ public class PaisImpl implements IPais {
         return paisDao.findById(id).orElse(null);
     }
 
-    @Override
-    public boolean existByID(Long id) {
-        return paisDao.existsById(id);
-    }
 }
