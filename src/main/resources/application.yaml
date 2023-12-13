@@ -1,3 +1,17 @@
 spring:
-  profiles:
-    active: dev
+  output:
+    ansi:
+      enabled: always
+  datasource:
+    hikari:
+      maximum-pool-size: 1
+    url: ${DB_URL}/${DB}
+    username: ${DB_DEV_USER}
+    password: ${DB_DEV_KEY}
+springdoc:
+  swagger-ui:
+    enabled: true
+  api-docs:
+    enabled: true
+    swagger-ui:
+      path: /swagger-ui.html
