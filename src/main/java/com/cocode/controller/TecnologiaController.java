@@ -1,9 +1,9 @@
 package com.cocode.controller;
 
-import com.cocode.model.dto.StatusDto;
-import com.cocode.model.entity.Status;
+import com.cocode.model.dto.TecnologiaDTO;
+import com.cocode.model.entity.Tecnologia;
 import com.cocode.model.payload.ResponseMessage;
-import com.cocode.service.IStatus;
+import com.cocode.service.ITecnologia;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,14 +16,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
-public class StatusController {
+public class TecnologiaController {
 
     @Autowired
-    private IStatus  statusService;
+    private ITecnologia tecnologiasService;
 
-    @GetMapping("status")
+    @GetMapping("tecnologias")
     public ResponseEntity<?> showAll() {
-        List<Status> getList = statusService.listAll();
+        List<Tecnologia> getList = tecnologiasService.listAll();
 
         if (getList == null) {
             return new ResponseEntity<>(ResponseMessage.builder().message("No se encontró ningún elemento")
@@ -34,20 +34,21 @@ public class StatusController {
                 .object(getList).build(), HttpStatus.OK);
     }
 
-    @GetMapping("status/{id}")
+    @GetMapping("tecnologias/{id}")
     public ResponseEntity<?> showById(@PathVariable Long id) {
-        Status status = statusService.findById(id);
+        Tecnologia tecnologia = tecnologiasService.findById(id);
 
-        if (status == null) {
+        if (tecnologia == null) {
             return new ResponseEntity<>(ResponseMessage.builder().message("El registro que estás buscando no ha podido ser encontrado")
                     .object(null).build(), HttpStatus.NOT_FOUND);
         }
 
         return new ResponseEntity<>(ResponseMessage.builder().message("").object(
-                StatusDto.builder()
-                        .id(status.getId())
-                        .nombre(status.getNombre())
+                TecnologiaDTO.builder()
+                        .id(tecnologia.getId())
+                        .nombre(tecnologia.getNombre())
                         .build()
         ).build(), HttpStatus.OK);
     }
+
 }

@@ -1,9 +1,6 @@
 package com.cocode.model.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
@@ -15,10 +12,11 @@ import java.io.Serializable;
 @ToString
 @Entity
 @Table(name = "tecnologias")
-public class Tecnologias implements Serializable {
+public class Tecnologia implements Serializable {
 
     @Id
     @Column(name = "tecnologia_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "nombre_tecnologia")

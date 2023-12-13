@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Data
 @ToString
 @Builder
-public class TecnologiasDTO implements Serializable {
+public class TecnologiaDTO implements Serializable {
 
     private Long id;
     private String nombre;

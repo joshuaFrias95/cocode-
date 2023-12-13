@@ -26,7 +26,7 @@ public class PaisController {
 
         if (getList == null) {
             return new ResponseEntity<>(ResponseMessage.builder().message("No se econtró ningún país")
-                    .object(null).build(), HttpStatus.OK);
+                    .object(null).build(), HttpStatus.NOT_FOUND);
         }
 
         return new ResponseEntity<>(ResponseMessage.builder().message("")
