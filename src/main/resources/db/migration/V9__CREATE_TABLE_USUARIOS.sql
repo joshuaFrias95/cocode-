@@ -9,6 +9,9 @@ CREATE TABLE usuarios (
     puesto VARCHAR(75),
     avatar VARCHAR(250),
     puntos INT NOT NULL DEFAULT 50,
+    lista_proyectos INT,
+    lista_proyectosfav INT,
+    lista_tecnologias INT,
     fecha_registro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     activo BIT(1) NULL DEFAULT 1,
 
