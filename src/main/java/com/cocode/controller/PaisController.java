@@ -38,11 +38,13 @@ public class PaisController {
         Pais pais = paisService.findById(id);
 
         if (pais == null) {
-            return new ResponseEntity<>(ResponseMessage.builder().message("El registro que estás buscando no ha podido ser encontrad").object(null).build(), HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(ResponseMessage.builder().message("El registro que estás buscando no ha podido ser encontrado")
+                    .object(null).build(), HttpStatus.NOT_FOUND);
         }
 
         return new ResponseEntity<>(ResponseMessage.builder().message("").object(
-                PaisDto.builder().id(pais.getId())
+                PaisDto.builder()
+                        .id(pais.getId())
                         .codigoPais(pais.getCodigoPais())
                         .nombre(pais.getNombre())
                         .build()
