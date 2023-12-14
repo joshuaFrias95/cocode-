@@ -15,13 +15,10 @@ import java.io.Serializable;
 public class Pais implements Serializable {
 
     @Id
-    @Column(name = "pais_id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column(name = "codigo_pais")
     private String codigoPais;
-
-    @Column(name = "nombre_pais")
     private String nombre;
 }

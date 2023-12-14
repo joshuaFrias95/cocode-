@@ -3,11 +3,18 @@ spring:
     ansi:
       enabled: always
   datasource:
+    url: jdbc:mariadb://localhost/cocode_db
+    username: root
+    password: ${ROOT_KEY}
+    driver-class-name: org.mariadb.jdbc.Driver
     hikari:
       maximum-pool-size: 1
-    url: ${DB_URL}/${DB}
-    username: ${DB_DEV_USER}
-    password: ${DB_DEV_KEY}
+  jpa:
+#    database-platform: org.hibernate.dialect.MariaDBDialect
+#    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
 
 springdoc:
   swagger-ui:
