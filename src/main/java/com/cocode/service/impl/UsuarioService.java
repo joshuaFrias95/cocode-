@@ -49,4 +49,9 @@ public class UsuarioService implements IUsuarioService {
     public void delete(Usuario usuario) {
         usuarioDao.delete(usuario);
     }
+
+    @Override
+    public boolean existById(Long id) {
+        return usuarioDao.existsById(id);
+    }
 }

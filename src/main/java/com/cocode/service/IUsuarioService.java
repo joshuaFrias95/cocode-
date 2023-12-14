@@ -11,4 +11,6 @@ public interface IUsuarioService {
     Usuario save(UsuarioDto usuario);
     Usuario findById(Long id);
     void delete(Usuario usuario);
+
+    boolean existById(Long id);
 }
