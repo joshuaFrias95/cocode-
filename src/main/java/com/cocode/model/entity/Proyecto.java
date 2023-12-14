@@ -9,14 +9,15 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "paises")
-public class Pais {
+@Table(name = "proyectos")
+public class Proyecto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(length = 4, unique = true, nullable = false)
-    private String codigo;
-    @Column(length = 25, unique = true, nullable = false)
     private String nombre;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id", nullable = false)
+    private Usuario usuario;
 }
