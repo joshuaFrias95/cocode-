@@ -102,47 +102,24 @@ public class UsuarioController {
         }
     }
 
-    @PutMapping("cliente/{id}")
-    public ResponseEntity<?> update(@RequestBody UsuarioDto usuarioDto, @PathVariable Long id) {
-        Usuario usuarioUpdate = null;
+    @DeleteMapping("usuario/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id) {
 
+        Usuario usuarioDelete = null;
         try {
 
-            if (usuarioService.existById(id)) {
-                usuarioDto.setId(id);
-                usuarioUpdate = usuarioService.save(usuarioDto);
+            usuarioDelete = usuarioService.findById(id);
 
-                return new ResponseEntity<>(ResponseMessage.builder()
-                        .message("Usuario actualizado correctamente")
-                        .object(UsuarioDto.builder()
-                                .id(usuarioDto.getId())
-                                .nombre(usuarioDto.getNombre())
-                                .apellido(usuarioDto.getApellido())
-                                .email(usuarioDto.getEmail())
-                                .password(usuarioDto.getPassword())
-                                .pais(usuarioDto.getPais())
-                                .descripcion(usuarioDto.getDescripcion())
-                                .puesto(usuarioDto.getPuesto())
-                                .avatar(usuarioDto.getAvatar())
-                                .puntos(usuarioDto.getPuntos())
-                                .activo(usuarioDto.getActivo()).build()).build(), HttpStatus.CREATED);
-            } else {
-                return new ResponseEntity<>(
-                        ResponseMessage.builder()
-                                .message("El registro que intentas actualizar no ha podido ser encontrado")
-                                .object(null)
-                                .build(), HttpStatus.NOT_FOUND
-                );
-            }
+            usuarioService.delete(usuarioDelete);
 
-        } catch (DataAccessException exDa) {
+            return new ResponseEntity<>(usuarioDelete, HttpStatus.NO_CONTENT);
+        } catch (DataAccessException exDA) {
 
-            return new ResponseEntity<>(
-                    ResponseMessage.builder()
-                            .message(exDa.getMessage())
-                            .object(null)
-                            .build(), HttpStatus.METHOD_NOT_ALLOWED
-            );
+            return new ResponseEntity<>(ResponseMessage.builder()
+                    .message(exDA.getMessage())
+                    .object(null)
+                    .build(), HttpStatus.METHOD_NOT_ALLOWED);
+
         }
     }
 }
