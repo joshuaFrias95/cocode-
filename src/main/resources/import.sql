@@ -27,3 +27,56 @@ INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos, activo) V
 INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos, activo) VALUES ('usuario', 'apellido', 'mailunico7@mail.com', 'password', 7, 50, 1);
 INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos, activo) VALUES ('usuario', 'apellido', 'mailunico8@mail.com', 'password', 8, 50, 1);
 INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos, activo) VALUES ('usuario', 'apellido', 'mailunico9@mail.com', 'password', 9, 50, 1);
+
+INSERT INTO tecnologias (nombre) VALUES('.NET');
+INSERT INTO tecnologias (nombre) VALUES('Ada');
+INSERT INTO tecnologias (nombre) VALUES('Assembly');
+INSERT INTO tecnologias (nombre) VALUES('Bash');
+INSERT INTO tecnologias (nombre) VALUES('C');
+INSERT INTO tecnologias (nombre) VALUES('C#');
+INSERT INTO tecnologias (nombre) VALUES('C++');
+INSERT INTO tecnologias (nombre) VALUES('Clojure');
+INSERT INTO tecnologias (nombre) VALUES('COBOL');
+INSERT INTO tecnologias (nombre) VALUES('CSS');
+INSERT INTO tecnologias (nombre) VALUES('Dart');
+INSERT INTO tecnologias (nombre) VALUES('Elixir');
+INSERT INTO tecnologias (nombre) VALUES('Elm');
+INSERT INTO tecnologias (nombre) VALUES('Erlang');
+INSERT INTO tecnologias (nombre) VALUES('Fortran');
+INSERT INTO tecnologias (nombre) VALUES('Go');
+INSERT INTO tecnologias (nombre) VALUES('Groovy');
+INSERT INTO tecnologias (nombre) VALUES('Haskel');
+INSERT INTO tecnologias (nombre) VALUES('HTML');
+INSERT INTO tecnologias (nombre) VALUES('Java');
+INSERT INTO tecnologias (nombre) VALUES('JavaScript');
+INSERT INTO tecnologias (nombre) VALUES('Kotlin');
+INSERT INTO tecnologias (nombre) VALUES('Lisp');
+INSERT INTO tecnologias (nombre) VALUES('Lua');
+INSERT INTO tecnologias (nombre) VALUES('MATLAB');
+INSERT INTO tecnologias (nombre) VALUES('Objective-C');
+INSERT INTO tecnologias (nombre) VALUES('Pascal');
+INSERT INTO tecnologias (nombre) VALUES('Perl');
+INSERT INTO tecnologias (nombre) VALUES('PHP');
+INSERT INTO tecnologias (nombre) VALUES('Python');
+INSERT INTO tecnologias (nombre) VALUES('R');
+INSERT INTO tecnologias (nombre) VALUES('Ruby');
+INSERT INTO tecnologias (nombre) VALUES('Rust');
+INSERT INTO tecnologias (nombre) VALUES('Scala');
+INSERT INTO tecnologias (nombre) VALUES('Shell');
+INSERT INTO tecnologias (nombre) VALUES('SQL');
+INSERT INTO tecnologias (nombre) VALUES('Swift');
+INSERT INTO tecnologias (nombre) VALUES('TypeScript');
+INSERT INTO tecnologias (nombre) VALUES('Visual Basic');
+INSERT INTO tecnologias (nombre  ) VALUES('Yaml');
+
+INSERT INTO dificultades (nombre) VALUES('Principiante');
+INSERT INTO dificultades (nombre) VALUES('Intermedio');
+INSERT INTO dificultades (nombre) VALUES('Avanzado');
+
+INSERT INTO proyectos (nombre, descripcion, dificultad, activo) VALUES("IA con Python", "Proyecto de desarrollo de una inteligencia artificial con Machine Learning", 1, 1);
+INSERT INTO proyectos (nombre, descripcion, dificultad, activo) VALUES("Calculadora", "Hermano, solo es una calculadora", 2, 1);
+INSERT INTO proyectos (nombre, descripcion, dificultad, activo) VALUES("Clases diseño web", "Clase de hoy: SCSS", 3, 1);
+
+
+
+

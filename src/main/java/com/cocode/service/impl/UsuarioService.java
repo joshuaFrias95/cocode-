@@ -4,9 +4,9 @@ import com.cocode.model.dao.UsuarioDao;
 import com.cocode.model.dto.UsuarioDto;
 import com.cocode.model.entity.Usuario;
 import com.cocode.service.IUsuarioService;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -20,6 +20,7 @@ public class UsuarioService implements IUsuarioService {
     public List<Usuario> listAll() {
         return (List<Usuario>) usuarioDao.findAll();
     }
+
 
     @Transactional
     @Override

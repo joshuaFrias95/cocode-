@@ -122,6 +122,8 @@ public class UsuarioController {
 
         }
     }
+
+    // TODO: Método PUT para usuario
 }
 
 

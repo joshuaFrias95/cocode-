@@ -3,6 +3,8 @@ package com.cocode.model.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
 @Builder
@@ -10,14 +12,24 @@ import lombok.*;
 @NoArgsConstructor
 @Entity
 @Table(name = "proyectos")
-public class Proyecto {
+public class Proyecto implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(length = 50, nullable = false)
     private String nombre;
 
-    @ManyToOne
-    @JoinColumn(name = "usuario_id", nullable = false)
-    private Usuario usuario;
+    @Column(length = 250)
+    private String descripcion;
+
+    private String portada;
+
+    @OneToOne(targetEntity = Dificultad.class)
+    @JoinColumn(name = "dificultad")
+    private Dificultad dificultad;
+
+    @Column(columnDefinition = "tinyint(1)", nullable = false)
+    private Boolean activo;
 }
