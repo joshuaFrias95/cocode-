@@ -33,7 +33,7 @@ public class UsuarioService implements IUsuarioService {
                 .password(usuarioDto.getPassword())
                 .pais(usuarioDto.getPais())
                 .descripcion(usuarioDto.getDescripcion())
-                .puesto(usuarioDto.getPuesto())
+                .rol(usuarioDto.getRol())
                 .avatar(usuarioDto.getAvatar())
                 .puntos(usuarioDto.getPuntos())
                 .activo(usuarioDto.getActivo()).build();

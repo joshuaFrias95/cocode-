@@ -40,7 +40,7 @@ public class Usuario implements Serializable {
     private String descripcion;
 
     @Column(length = 30)
-    private String puesto;
+    private String rol;
 
     private String avatar;
 

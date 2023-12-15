@@ -19,7 +19,7 @@ public class UsuarioDto implements Serializable {
     private String password;
     private Pais pais;
     private String descripcion;
-    private String puesto;
+    private String rol;
     private String avatar;
     private Integer puntos;
     private Boolean activo;

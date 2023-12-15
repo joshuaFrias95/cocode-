@@ -1,6 +1,5 @@
 package com.cocode.controller;
 
-import com.cocode.model.dao.UsuarioDao;
 import com.cocode.model.dto.UsuarioDto;
 import com.cocode.model.entity.Usuario;
 import com.cocode.model.payload.ResponseMessage;
@@ -65,7 +64,7 @@ public class UsuarioController {
                                 .password(usuario.getPassword())
                                 .pais(usuario.getPais())
                                 .descripcion(usuario.getDescripcion())
-                                .puesto(usuario.getPuesto())
+                                .rol(usuario.getRol())
                                 .avatar(usuario.getAvatar())
                                 .puntos(usuario.getPuntos())
                                 .activo(usuario.getActivo()).build())
@@ -90,7 +89,7 @@ public class UsuarioController {
                             .password(usuarioDto.getPassword())
                             .pais(usuarioDto.getPais())
                             .descripcion(usuarioDto.getDescripcion())
-                            .puesto(usuarioDto.getPuesto())
+                            .rol(usuarioDto.getRol())
                             .avatar(usuarioDto.getAvatar())
                             .puntos(usuarioDto.getPuntos())
                             .activo(usuarioDto.getActivo()).build())

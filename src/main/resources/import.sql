@@ -73,9 +73,9 @@ INSERT INTO dificultades (nombre) VALUES('Principiante');
 INSERT INTO dificultades (nombre) VALUES('Intermedio');
 INSERT INTO dificultades (nombre) VALUES('Avanzado');
 
-INSERT INTO proyectos (nombre, descripcion, dificultad, activo) VALUES("IA con Python", "Proyecto de desarrollo de una inteligencia artificial con Machine Learning", 1, 1);
-INSERT INTO proyectos (nombre, descripcion, dificultad, activo) VALUES("Calculadora", "Hermano, solo es una calculadora", 2, 1);
-INSERT INTO proyectos (nombre, descripcion, dificultad, activo) VALUES("Clases diseño web", "Clase de hoy: SCSS", 3, 1);
+INSERT INTO proyectos (nombre, descripcion, dificultad, activo) VALUES("IA con Python", "Proyecto de desarrollo de una inteligencia artificial con Machine Learning", 3, 1);
+INSERT INTO proyectos (nombre, descripcion, dificultad, activo) VALUES("Calculadora", "Hermano, solo es una calculadora", 1, 1);
+INSERT INTO proyectos (nombre, descripcion, activo) VALUES("Clases diseño web", "Clase de hoy: SCSS", 1);
 
 
 
