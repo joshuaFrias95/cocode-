@@ -32,6 +32,4 @@ public class Tareas implements Serializable {
     @JoinColumn(name = "status", nullable = false)
     private Estado estado;
 
-    @Column(columnDefinition="tinyint(1)", nullable = false)
-    private Boolean activo;
 }
