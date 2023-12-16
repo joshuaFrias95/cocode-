@@ -3,16 +3,18 @@ spring:
     ansi:
       enabled: always
   datasource:
-    url: ${DB_URL}/${DB}
-    username: ${DB_PROD_USER}
-    password: ${DB_PROD_KEY}
+    url: jdbc:mariadb://localhost/cocode_db
+#    url: ${DB_URL}/${DB}
+    username: root
+#    username: ${DB_PROD_USER}
+    password: hi,welcome
+#    password: ${DB_PROD_KEY}
     hikari:
       maximum-pool-size: 1
   jpa:
     properties:
       hibernate:
         format_sql: true
-    database-platform: org.hibernate.dialect.MySQL8Dialect
     show-sql: true
     hibernate:
       ddl-auto: create-drop

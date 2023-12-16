@@ -18,15 +18,30 @@ INSERT INTO paises (codigo, nombre) VALUES('PR','Puerto Rico');
 INSERT INTO paises (codigo, nombre) VALUES('DO','República Dominicana');
 INSERT INTO paises (codigo, nombre) VALUES('VE','Venezuela');
 
-INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos, activo) VALUES ('usuario', 'apellido', 'mailunico1@mail.com', 'password', 1, 50, 1);
-INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos, activo) VALUES ('usuario', 'apellido', 'mailunico2@mail.com', 'password', 2, 50, 1);
-INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos, activo) VALUES ('usuario', 'apellido', 'mailunico3@mail.com', 'password', 3, 50, 0);
-INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos, activo) VALUES ('usuario', 'apellido', 'mailunico4@mail.com', 'password', 4, 50, 1);
-INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos, activo) VALUES ('usuario', 'apellido', 'mailunico5@mail.com', 'password', 5, 50, 0);
-INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos, activo) VALUES ('usuario', 'apellido', 'mailunico6@mail.com', 'password', 6, 50, 1);
-INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos, activo) VALUES ('usuario', 'apellido', 'mailunico7@mail.com', 'password', 7, 50, 1);
-INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos, activo) VALUES ('usuario', 'apellido', 'mailunico8@mail.com', 'password', 8, 50, 1);
-INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos, activo) VALUES ('usuario', 'apellido', 'mailunico9@mail.com', 'password', 9, 50, 1);
+INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos) VALUES ('usuario', 'apellido', 'mailunico1@mail.com', 'password', 1, 50);
+INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos) VALUES ('usuario', 'apellido', 'mailunico2@mail.com', 'password', 4, 50);
+INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos) VALUES ('usuario', 'apellido', 'mailunico3@mail.com', 'password', 4, 50);
+INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos) VALUES ('usuario', 'apellido', 'mailunico4@mail.com', 'password', 4, 50);
+INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos) VALUES ('usuario', 'apellido', 'mailunico5@mail.com', 'password', 1, 50);
+INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos) VALUES ('usuario', 'apellido', 'mailunico6@mail.com', 'password', 2, 50);
+INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos) VALUES ('usuario', 'apellido', 'mailunico7@mail.com', 'password', 7, 50);
+INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos) VALUES ('usuario', 'apellido', 'mailunico8@mail.com', 'password', 8, 50);
+INSERT INTO usuarios (nombre, apellido, email, password, pais, puntos) VALUES ('usuario', 'apellido', 'mailunico9@mail.com', 'password', 14, 50);
+
+INSERT INTO dificultades (nombre) VALUES('Principiante');
+INSERT INTO dificultades (nombre) VALUES('Intermedio');
+INSERT INTO dificultades (nombre) VALUES('Avanzado');
+
+
+INSERT INTO proyectos (nombre, descripcion, dificultad) VALUES("IA con Python", "Proyecto de desarrollo de una inteligencia artificial con Machine Learning", 1);
+INSERT INTO proyectos (nombre, descripcion, dificultad) VALUES("Calculadora", "Hermano, solo es una calculadora", 1);
+INSERT INTO proyectos (nombre, descripcion, dificultad) VALUES("Clases diseño web", "Clase de hoy: SCSS", 2);
+
+INSERT INTO status (nombre) VALUES('Sig asignar');
+INSERT INTO status (nombre) VALUES('En proceso');
+INSERT INTO status (nombre) VALUES('Con retraso');
+INSERT INTO status (nombre) VALUES('Concluido');
+INSERT INTO status (nombre) VALUES('Requiere atención');
 
 INSERT INTO tecnologias (nombre) VALUES('.NET');
 INSERT INTO tecnologias (nombre) VALUES('Ada');
@@ -68,15 +83,3 @@ INSERT INTO tecnologias (nombre) VALUES('Swift');
 INSERT INTO tecnologias (nombre) VALUES('TypeScript');
 INSERT INTO tecnologias (nombre) VALUES('Visual Basic');
 INSERT INTO tecnologias (nombre  ) VALUES('Yaml');
-
-INSERT INTO dificultades (nombre) VALUES('Principiante');
-INSERT INTO dificultades (nombre) VALUES('Intermedio');
-INSERT INTO dificultades (nombre) VALUES('Avanzado');
-
-INSERT INTO proyectos (nombre, descripcion, dificultad, activo) VALUES("IA con Python", "Proyecto de desarrollo de una inteligencia artificial con Machine Learning", 3, 1);
-INSERT INTO proyectos (nombre, descripcion, dificultad, activo) VALUES("Calculadora", "Hermano, solo es una calculadora", 1, 1);
-INSERT INTO proyectos (nombre, descripcion, activo) VALUES("Clases diseño web", "Clase de hoy: SCSS", 1);
-
-
-
-

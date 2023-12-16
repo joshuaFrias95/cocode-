@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Getter
 @Setter
@@ -23,4 +24,7 @@ public class Pais implements Serializable {
 
     @Column(length = 25, unique = true, nullable = false)
     private String nombre;
+
+    @OneToMany(targetEntity = Usuario.class, fetch = FetchType.LAZY, mappedBy = "pais")
+    private List<Usuario> usuarios;
 }

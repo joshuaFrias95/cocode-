@@ -4,9 +4,10 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.List;
 
-@Getter
-@Setter
+@Data
+@ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,9 +16,12 @@ import java.io.Serializable;
 public class Dificultad implements Serializable {
 
     @Id
-    @GeneratedValue(strategy =  GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(length = 15, unique = true, nullable = false)
     private String nombre;
+
+    @OneToMany(targetEntity = Proyecto.class, fetch = FetchType.LAZY, mappedBy = "dificultad")
+    List<Proyecto> proyectos;
 }

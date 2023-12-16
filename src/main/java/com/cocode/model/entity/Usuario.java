@@ -5,6 +5,7 @@ import jakarta.validation.constraints.Email;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @ToString
@@ -32,7 +33,7 @@ public class Usuario implements Serializable {
     @Column(nullable = false)
     private String password;
 
-    @OneToOne(targetEntity = Pais.class)
+    @ManyToOne
     @JoinColumn(name = "pais")
     private Pais pais;
 
@@ -47,6 +48,20 @@ public class Usuario implements Serializable {
     @Column(columnDefinition="int", nullable = false)
     private Integer puntos;
 
-    @Column(columnDefinition="tinyint(1)", nullable = false)
-    private Boolean activo;
+
+
+
+    @ManyToMany(targetEntity = Tecnologia.class, fetch = FetchType.EAGER)
+    @JoinTable(name = "tecnologias_usuario", joinColumns = @JoinColumn(name = "usuario"), inverseJoinColumns = @JoinColumn(name = "tecnologia"))
+    private List<Tecnologia> tecnologias;
+
+    @ManyToMany(targetEntity = Proyecto.class, fetch = FetchType.LAZY)
+    @JoinTable(name = "proyectos_usuario", joinColumns = @JoinColumn(name = "usuario"), inverseJoinColumns = @JoinColumn(name = "proyecto"))
+    private List<Proyecto> proyectos;
+
+    @ManyToMany(targetEntity = Proyecto.class, fetch = FetchType.LAZY)
+    @JoinTable(name = "proyectos_favoritos", joinColumns = @JoinColumn(name = "usuario"), inverseJoinColumns = @JoinColumn(name = "proyecto"))
+    private List<Proyecto> proyectosFavoritos;
+
+
 }

@@ -4,9 +4,10 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.List;
 
-@Getter
-@Setter
+@Data
+@ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,7 +19,7 @@ public class Proyecto implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 50, nullable = false)
+    @Column(length = 70, nullable = false)
     private String nombre;
 
     @Column(length = 250)
@@ -26,10 +27,21 @@ public class Proyecto implements Serializable {
 
     private String portada;
 
-    @OneToOne(targetEntity = Dificultad.class)
-    @JoinColumn(name = "dificultad")
+    @OneToOne(targetEntity = Colaboradores.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "colaborador")
+    private Colaboradores colaboradores;
+
+    @OneToOne(targetEntity = Tareas.class, cascade = CascadeType.ALL)
+    private Tareas tareas;
+
+    @ManyToOne
+    @JoinColumn(name = "dificultad", nullable = false)
     private Dificultad dificultad;
 
-    @Column(columnDefinition = "tinyint(1)", nullable = false)
-    private Boolean activo;
+
+
+
+    @ManyToMany(targetEntity = Tecnologia.class, fetch = FetchType.EAGER)
+    @JoinTable(name = "tecnologias_proyecto", joinColumns = @JoinColumn(name = "proyecto"), inverseJoinColumns = @JoinColumn(name = "tecnologia"))
+    private List<Tecnologia> tecnologias;
 }
