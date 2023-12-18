@@ -1,5 +1,6 @@
 package com.cocode.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -25,6 +26,7 @@ public class Pais implements Serializable {
     @Column(length = 25, unique = true, nullable = false)
     private String nombre;
 
+    @JsonIgnore
     @OneToMany(targetEntity = Usuario.class, fetch = FetchType.LAZY, mappedBy = "pais")
     private List<Usuario> usuarios;
 }

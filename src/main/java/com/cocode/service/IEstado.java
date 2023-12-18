@@ -8,5 +8,5 @@ public interface IEstado {
 
     List<Estado> listAll();
 
-    Estado GetById(Long id);
+    Estado findById(Long id);
 }

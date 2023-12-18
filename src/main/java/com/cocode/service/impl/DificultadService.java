@@ -11,17 +11,16 @@ import java.util.List;
 
 @Service
 public class DificultadService implements IDificultad {
-
+    
     @Autowired
     private DificultadRepository dificultadRepository;
-
+    
     @Transactional(readOnly = true)
     @Override
     public List<Dificultad> listAll() {
         return (List<Dificultad>) dificultadRepository.findAll();
     }
 
-    @Transactional(readOnly = true)
     @Override
     public Dificultad findById(Long id) {
         return dificultadRepository.findById(id).orElse(null);

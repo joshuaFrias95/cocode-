@@ -1,8 +1,10 @@
 package com.cocode.model.dto;
 
+import com.cocode.model.entity.Colaboradores;
 import com.cocode.model.entity.Pais;
 import com.cocode.model.entity.Proyecto;
 import com.cocode.model.entity.Tecnologia;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;
@@ -25,8 +27,13 @@ public class UsuarioDto implements Serializable {
     private String rol;
     private String avatar;
     private Integer puntos;
-
+    @JsonIgnore
+    private List<Colaboradores> colaboradores;
+    @JsonIgnore
     private List<Tecnologia> tecnologias;
+    @JsonIgnore
     private List<Proyecto> proyectos;
+    @JsonIgnore
     private List<Proyecto> proyectosFavoritos;
+
 }

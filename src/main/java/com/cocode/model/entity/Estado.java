@@ -3,6 +3,7 @@ package com.cocode.model.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Data
@@ -12,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "status")
-public class Estado {
+public class Estado implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,5 +23,5 @@ public class Estado {
     private String nombre;
 
     @OneToMany(targetEntity = Tareas.class, fetch =  FetchType.EAGER, mappedBy = "estado")
-    List<Tareas> tareas;
+    private List<Tareas> tareas;
 }

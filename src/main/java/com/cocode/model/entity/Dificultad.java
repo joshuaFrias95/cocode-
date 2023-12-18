@@ -1,5 +1,6 @@
 package com.cocode.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,6 +23,7 @@ public class Dificultad implements Serializable {
     @Column(length = 15, unique = true, nullable = false)
     private String nombre;
 
+    @JsonIgnore
     @OneToMany(targetEntity = Proyecto.class, fetch = FetchType.LAZY, mappedBy = "dificultad")
-    List<Proyecto> proyectos;
+    private List<Proyecto> proyectos;
 }

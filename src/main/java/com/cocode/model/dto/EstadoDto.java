@@ -1,6 +1,7 @@
 package com.cocode.model.dto;
 
 import com.cocode.model.entity.Tareas;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;
@@ -15,5 +16,6 @@ public class EstadoDto implements Serializable {
 
     private Long id;
     private String nombre;
+    @JsonIgnore
     List<Tareas> tareas;
 }

@@ -1,14 +1,16 @@
+server:
+  port: 8080
 spring:
   output:
     ansi:
       enabled: always
   datasource:
-    url: jdbc:mariadb://localhost/cocode_db
-#    url: ${DB_URL}/${DB}
-    username: root
-#    username: ${DB_PROD_USER}
-    password: hi,welcome
-#    password: ${DB_PROD_KEY}
+#    url: jdbc:mariadb://localhost/cocode_db
+    url: ${DB_URL}/${DB}
+#    username: root
+    username: ${DB_PROD_USER}
+#    password: ${ROOT}
+    password: ${DB_PROD_KEY}
     hikari:
       maximum-pool-size: 1
   jpa:
@@ -17,7 +19,7 @@ spring:
         format_sql: true
     show-sql: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
 
 springdoc:
   swagger-ui:

@@ -1,5 +1,6 @@
 package com.cocode.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
@@ -27,7 +28,7 @@ public class Usuario implements Serializable {
     private String apellido;
 
     @Email
-    @Column(length = 25, nullable = false, unique = true)
+    @Column(length = 50, nullable = false, unique = true)
     private String email;
 
     @Column(nullable = false)
@@ -45,20 +46,25 @@ public class Usuario implements Serializable {
 
     private String avatar;
 
-    @Column(columnDefinition="int", nullable = false)
+    @Column(columnDefinition="int")
     private Integer puntos;
 
 
+    @JsonIgnore
+    @OneToMany(targetEntity = Colaboradores.class, fetch = FetchType.EAGER, mappedBy = "colaboradores")
+    private List<Colaboradores> colaboradores;
 
-
+    @JsonIgnore
     @ManyToMany(targetEntity = Tecnologia.class, fetch = FetchType.EAGER)
     @JoinTable(name = "tecnologias_usuario", joinColumns = @JoinColumn(name = "usuario"), inverseJoinColumns = @JoinColumn(name = "tecnologia"))
     private List<Tecnologia> tecnologias;
 
+    @JsonIgnore
     @ManyToMany(targetEntity = Proyecto.class, fetch = FetchType.LAZY)
     @JoinTable(name = "proyectos_usuario", joinColumns = @JoinColumn(name = "usuario"), inverseJoinColumns = @JoinColumn(name = "proyecto"))
     private List<Proyecto> proyectos;
 
+    @JsonIgnore
     @ManyToMany(targetEntity = Proyecto.class, fetch = FetchType.LAZY)
     @JoinTable(name = "proyectos_favoritos", joinColumns = @JoinColumn(name = "usuario"), inverseJoinColumns = @JoinColumn(name = "proyecto"))
     private List<Proyecto> proyectosFavoritos;

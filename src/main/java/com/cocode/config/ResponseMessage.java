@@ -1,4 +1,4 @@
-package com.cocode.model.payload;
+package com.cocode.config;
 
 import lombok.Builder;
 import lombok.Data;
